@@ -1,0 +1,33 @@
+create database db_vs_timecard;
+
+CREATE TABLE tb_employee (
+    id_employee INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(256) NOT NULL,
+    position VARCHAR(256) NOT NULL,
+    type VARCHAR(256) NOT NULL
+);
+
+
+CREATE TABLE tb_timecard (
+    id_timecard INT AUTO_INCREMENT PRIMARY KEY,
+    id_employee INT,
+    FOREIGN KEY (id_employee) REFERENCES tb_employee(id_employee) ON DELETE CASCADE,
+    date_card DATE,
+    day_week VARCHAR(50),
+    h_m_entry TIME,
+    h_m_exit TIME,
+    h_t_entry TIME,
+    h_t_exit TIME,
+    is_vacation BOOLEAN,
+    is_medical_certificate BOOLEAN
+);
+
+
+CREATE TABLE tb_user (
+    id_user INT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(256) NOT NULL,
+    password VARCHAR(256) NOT NULL
+);
+
+
+INSERT INTO tb_user (login, password) VALUES ('vsrh', 'videosom1710@');

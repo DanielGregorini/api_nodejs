@@ -1,0 +1,42 @@
+
+///rest client
+
+@URL=http://localhost:3006/employee/
+@TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InZzcmgiLCJpYXQiOjE3MTA4NDY0MzMsImV4cCI6MTcxMDkzMjgzM30.7pNCe-ws8IacvTC-5OuZICKnlxGWUieTPKdi54r7a78
+###Obter todoa 
+
+GET {{URL}}
+Authorization:{{TOKEN}}
+
+###
+
+GET {{URL}}/1
+
+GET {{URL}}/4
+
+###criar employee
+POST {{URL}}
+Content-Type: application/json
+
+{
+  "name": "teste1",
+  "position": "escravo",
+  "type": "escravo"
+}
+
+
+
+###atualizar empregado
+PUT {{URL}}/1
+
+Content-Type: application/json
+
+{
+  "name": "Daniel",
+  "position": "escravo",
+  "type": "escravidão"
+}
+
+
+### deletar
+DELETE {{URL}}/4

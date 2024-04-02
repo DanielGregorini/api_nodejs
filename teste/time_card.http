@@ -1,0 +1,55 @@
+
+///rest client
+
+@URL=http://localhost:3006/timecard/
+@TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InZzcmgiLCJpYXQiOjE3MTA4NDY0MTMsImV4cCI6MTcxMDkzMjgxM30.ZpF99ZqibAVl7f3N1YTIu-lTXf-x5_iTU5Pm7gvmWbw
+
+###Obter todoa as avaliacao
+
+GET {{URL}}
+
+###
+
+
+GET {{URL}}employee/1
+
+###
+GET {{URL}}/4
+
+###criar
+POST {{URL}}
+Content-Type: application/json
+
+{
+    "id_employee": 1,
+    "date_card": "2023-01-23",
+    "day_week": "Terca",
+    "h_m_entry": "08:10:00",
+    "h_m_exit": "12:00:00",
+    "h_t_entry": "13:00:00",
+    "h_t_exit": "17:02:00",
+    "is_vacation": 0,
+    "is_medical_certificate": 0
+}
+
+
+
+###atualizar 
+PUT {{URL}}/2
+Content-Type: application/json
+
+
+{
+    "DATE_CARD": "2023-01-16",
+    "DAY_WEEK": "Monday",
+    "H_M_ENTRY": "04:00:00",
+    "H_M_EXIT": "12:00:00",
+    "H_T_ENTRY": "13:00:00",
+    "H_T_EXIT": "17:00:00",
+    "IS_VACATION": 0,
+    "IS_MEDICAL_CERTIFICATE": 0
+}
+
+
+### deletar 
+DELETE {{URL}}/3
